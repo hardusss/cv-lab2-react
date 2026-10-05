@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CV Данила Клепара: засновник і розробник NextVibe, студент кібербезпеки Львівської політехніки.">
+  <meta name="author" content="Клепар Данило Богданович">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>Данило Клепар - CV</title>
+</head>
+<body>
+  <header>
+    <h1>Данило Клепар</h1>
+    <p><strong>Засновник і розробник <a href="https://nextvibe.io">NextVibe</a></strong>, студент кібербезпеки у Львівській політехніці.</p>
+    <nav aria-label="Розділи резюме">
+      <ul>
+        <li><a href="#about">Про мене</a></li>
+        <li><a href="#experience">Досвід</a></li>
+        <li><a href="#awards">Перемоги та гранти</a></li>
+        <li><a href="#path">Шлях</a></li>
+        <li><a href="#stack">Стек</a></li>
+        <li><a href="#education">Освіта</a></li>
+        <li><a href="#contacts">Контакти</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>Про мене</h2>
+      <p>Мені 18 років, я зі Львова. Будую <strong>NextVibe</strong>, шар IRL-нетворкінгу на Solana, і пишу весь його код сам. Почав працювати над проєктом у 16 років.</p>
+      <p>На подіях люди торкаються телефонами через <abbr title="Near Field Communication">NFC</abbr> або <abbr title="Bluetooth Low Energy">BLE</abbr> і отримують підтвердження зустрічі. Гості відмічаються в організатора й забирають <abbr title="Proof of Attendance Protocol">POAP</abbr>, а організатор бачить у дашборді, хто з ким познайомився.</p>
+      <p>Станом на вересень 2026 року: <strong>1 100+</strong> встановлень у Solana dApp Store, <strong>170+</strong> відгуків і <strong>643</strong> зареєстровані акаунти без жодної реклами.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Досвід</h2>
+      <article>
+        <h3>Засновник і розробник, <a href="https://nextvibe.io">NextVibe</a></h3>
+        <p><time datetime="2024">з 2024 року</time>, Львів</p>
+        <p>Команда з двох людей: я відповідаю за всю розробку, від мобільного застосунку до бекенду й ончейн-частини, кофаундер Марко Вендиш веде бізнес, фінанси й операції. Проєкт почався як мій шкільний дипломний проєкт, соцмережа з кастодіальним гаманцем. Після першого дзвінка з Superteam Ukraine ми переосмислили продукт і зосередилися на офлайн-подіях.</p>
+
+        <h4>Як це працює</h4>
+        <ol>
+          <li><strong>Організатор додає подію.</strong> Імпортує її з Luma і підтверджує кодом NV в описі.</li>
+          <li><strong>Гість відмічається.</strong> Торкається телефона організатора в межах геозони під час події та отримує POAP як компресований NFT.</li>
+          <li><strong>Учасники знайомляться.</strong> Tap to Meet між будь-якими двома телефонами дає Proof of Meet, а організатор бачить теплову карту знайомств.</li>
+        </ol>
+
+        <h4>Що я зробив</h4>
+        <ul>
+          <li>Застосунок для Android та iOS на Expo і React Native, основна платформа Solana Seeker. В App Store з <time datetime="2026-10-02">2 жовтня 2026</time>.</li>
+          <li>Власний HCE-модуль для NFC і BLE-обмін для пар телефонів, де NFC не працює. На iPhone є запасний QR-код.</li>
+          <li>Сервіс на Bun для мінту cNFT через Metaplex Bubblegum: транзакції оплачує бекенд, користувачу не потрібен SOL.</li>
+          <li>Режим без гаманця: check-in, POAP і Proof of Meet зберігаються й мінтяться, щойно людина підключить гаманець.</li>
+          <li>Чати з наскрізним шифруванням, Tap to Pay через NFC/BLE, свопи Jupiter, геолокація на H3.</li>
+          <li>Дашборд організатора <a href="https://dashboard.nextvibe.io">dashboard.nextvibe.io</a> з тепловою картою торкань.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Побічний проєкт: <a href="https://shoutoutwall.nextvibe.io">Shoutout Wall</a></h3>
+        <p><time datetime="2026-10-01">жовтень 2026</time></p>
+        <p>Стіна повідомлень для подій без бекенду: гості надсилають memo-транзакції в Solana, а фронтенд на Next.js показує їх як чат. Зробили разом з Марком за одну годину на UNI Vibeathon.</p>
+      </article>
+    </section>
+
+    <section id="awards">
+      <h2>Перемоги та гранти</h2>
+      <article>
+        <h3>Web3 Resilience Lab: переможець серед студентських команд</h3>
+        <p><time datetime="2026-08-06">серпень 2026</time>. Організатори: Мінцифри, Binance, Lviv IT Cluster, Web3 Institute.</p>
+        <p>NextVibe увійшов до 10 проєктів, які отримують підтримку програми: шість місяців менторства і грант $12 500.</p>
+      </article>
+      <article>
+        <h3>Грант Superteam Ukraine</h3>
+        <p>Отримали після першої участі в хакатоні Colosseum.</p>
+      </article>
+      <p><em>Усі гранти без передачі частки в компанії.</em></p>
+
+      <h3>Хакатони</h3>
+      <ul>
+        <li><strong>Colosseum</strong>: дві участі, друга в жовтні 2026</li>
+        <li><strong>CLOCK IN, Solana Mobile</strong>: вересень і жовтень 2026</li>
+        <li><strong>MONOLITH, Solana Mobile</strong>: лютий і березень 2026</li>
+      </ul>
+    </section>
+
+    <section id="path">
+      <h2>Шлях</h2>
+      <ol>
+        <li><time datetime="2024">2024</time>. Почав NextVibe як шкільний дипломний проєкт: соцмережа з кастодіальним гаманцем і AI-зображеннями до постів.</li>
+        <li><time datetime="2025">2025</time>. Вступив до Львівської політехніки на кібербезпеку.</li>
+        <li><time datetime="2026-02">Лютий 2026</time>. MONOLITH, перший хакатон Solana Mobile.</li>
+        <li><time datetime="2026-07-15">Липень 2026</time>. Перша власна подія: NextVibe NFC Networking у Львові.</li>
+        <li><time datetime="2026-08">Серпень 2026</time>. Перемога у Web3 Resilience Lab.</li>
+        <li><time datetime="2026-09">Вересень 2026</time>. 1 100+ встановлень і 170+ відгуків у Solana dApp Store, хакатон CLOCK IN.</li>
+        <li><time datetime="2026-10">Жовтень 2026</time>. Реліз в App Store, живий тест NextVibe на UNI Vibeathon у Політехніці, Colosseum вдруге.</li>
+      </ol>
+    </section>
+
+    <section id="stack">
+      <h2>Стек</h2>
+      <table>
+        <caption>Технології, з якими я працюю в NextVibe та інших проєктах</caption>
+        <thead>
+          <tr>
+            <th scope="col">Напрям</th>
+            <th scope="col">Технології</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Мобільний застосунок</th>
+            <td>React Native, Expo, NFC (власний HCE-модуль), BLE, Mobile Wallet Adapter, Seed Vault</td>
+          </tr>
+          <tr>
+            <th scope="row">Бекенд</th>
+            <td>Python, Django, MySQL, Redis, Cloudflare R2</td>
+          </tr>
+          <tr>
+            <th scope="row">Solana</th>
+            <td>Bun-сервіс для cNFT, Metaplex Bubblegum, Helius, Jupiter, LazorKit, gasless-транзакції</td>
+          </tr>
+          <tr>
+            <th scope="row">Веб</th>
+            <td>React, Next.js, Vite, Solana Wallet Adapter</td>
+          </tr>
+          <tr>
+            <th scope="row">Мови</th>
+            <td>TypeScript, JavaScript, Python</td>
+          </tr>
+          <tr>
+            <th scope="row">Інше</th>
+            <td>H3, наскрізне шифрування, Git, релізи в App Store і Solana dApp Store</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="education">
+      <h2>Освіта</h2>
+      <article>
+        <h3>Національний університет «Львівська політехніка»</h3>
+        <p>Кафедра «Захист інформації», кібербезпека. Навчаюся <time datetime="2025">з 2025 року</time>, група КБ-203.</p>
+      </article>
+      <h3>Мови</h3>
+      <dl>
+        <dt>Українська</dt>
+        <dd>рідна</dd>
+        <dt>Англійська</dt>
+        <dd>вільна письмова</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer id="contacts">
+    <h2>Контакти</h2>
+    <address>
+      <ul>
+        <li>Email: <a href="mailto:nextvibeweb3@gmail.com">nextvibeweb3@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/hardusss">github.com/hardusss</a></li>
+        <li>X: <a href="https://x.com/DanKlepar">@DanKlepar</a></li>
+        <li>NextVibe: <a href="https://nextvibe.io">nextvibe.io</a>, <a href="https://x.com/NextVibeWeb3">@NextVibeWeb3</a></li>
+      </ul>
+    </address>
+    <p><small>&copy; 2026 Данило Клепар. Лабораторна робота №2, частина 1: тільки HTML.</small></p>
+  </footer>
+</body>
+</html>
