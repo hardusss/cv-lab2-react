@@ -2,7 +2,8 @@
 // Так легко перемикати мову: App передає вниз або cv.ua, або cv.en.
 
 const contacts = [
-  { id: 'email', label: 'Email', value: 'nextvibeweb3@gmail.com', href: 'mailto:nextvibeweb3@gmail.com' },
+  { id: 'email', label: 'Email', value: 'dklepar@nextvibe.io', href: 'mailto:dklepar@nextvibe.io' },
+  { id: 'linkedin', label: 'LinkedIn', value: 'danylo-klepar', href: 'https://www.linkedin.com/in/danylo-klepar/' },
   { id: 'github', label: 'GitHub', value: 'hardusss', href: 'https://github.com/hardusss' },
   { id: 'x', label: 'X', value: '@DanKlepar', href: 'https://x.com/DanKlepar' },
   { id: 'site', label: 'NextVibe', value: 'nextvibe.io', href: 'https://nextvibe.io' },
@@ -36,7 +37,7 @@ export const cv = {
       flipBack: 'Перевернути бейдж',
     },
     hero: {
-      lead: 'Будую NextVibe, шар IRL-нетворкінгу на Solana, і пишу весь його код сам. Почав у 16.',
+      lead: 'З 2023 року будую NextVibe, шар IRL-нетворкінгу на Solana, і пишу весь його код сам.',
       text: 'На подіях люди торкаються телефонами через NFC або BLE і отримують підтвердження зустрічі. Гості відмічаються в організатора й забирають POAP, а організатор бачить у дашборді, хто з ким познайомився. Паралельно вчуся на кібербезпеці у Львівській політехніці.',
       traction: [
         { value: '1 100+', label: 'встановлень у Solana dApp Store' },
@@ -51,9 +52,9 @@ export const cv = {
       role: 'Засновник і розробник',
       org: 'NextVibe',
       link: 'https://nextvibe.io',
-      period: 'з 2024, Львів',
+      period: 'з 2023, Львів',
       summary:
-        'Команда з двох людей: я відповідаю за всю розробку, від мобільного застосунку до бекенду й ончейн-частини, а кофаундер Марко Вендиш веде бізнес, фінанси й операції. Проєкт почався як мій шкільний дипломний проєкт, соцмережа з кастодіальним гаманцем. Після першого дзвінка з Superteam Ukraine ми переосмислили продукт і зосередилися на офлайн-подіях.',
+        'Команда з двох людей: я відповідаю за всю розробку, від мобільного застосунку до бекенду й ончейн-частини, а кофаундер Марко Вендиш веде бізнес, фінанси й операції. Проєкт почався у 2023 році як мій дипломний проєкт у Молодіжному навчальному центрі імені св. Івана Боско, тоді це була соцмережа з кастодіальним гаманцем. Після першого дзвінка з Superteam Ukraine ми переосмислили продукт і зосередилися на офлайн-подіях.',
       howTitle: 'Як це працює',
       how: [
         { title: 'Організатор додає подію', text: 'Імпортує її з Luma і підтверджує кодом NV в описі.' },
@@ -86,6 +87,8 @@ export const cv = {
           date: 'серпень 2026',
           org: 'Мінцифри, Binance, Lviv IT Cluster, Web3 Institute',
           text: 'NextVibe увійшов до 10 проєктів, які отримують підтримку програми: шість місяців менторства і грант $12 500.',
+          link: 'https://thedigital.gov.ua/news/technologies/125-tysiach-na-ukrayinski-tekhnolohiyi-10-komand-otrymaiut-finansuvannia-na-rozvytok',
+          linkLabel: 'Список переможців на сайті Мінцифри',
         },
         {
           name: 'Superteam Ukraine',
@@ -107,12 +110,15 @@ export const cv = {
       title: 'Шлях',
       years: [
         {
-          year: '2024',
-          items: [{ when: '', text: 'Почав NextVibe як шкільний дипломний проєкт: соцмережа з кастодіальним гаманцем і AI-зображеннями до постів.' }],
+          year: '2023',
+          items: [{ when: '', text: 'Почав NextVibe як дипломний проєкт у Молодіжному навчальному центрі імені св. Івана Боско у Львові: тоді це була соцмережа з кастодіальним гаманцем і AI-зображеннями до постів.' }],
         },
         {
           year: '2025',
-          items: [{ when: 'вересень', text: 'Вступив до Львівської політехніки на кібербезпеку.' }],
+          items: [
+            { when: '', text: 'Завершив навчання в центрі Боско, де NextVibe був моїм дипломним проєктом.' },
+            { when: 'вересень', text: 'Вступив до Львівської політехніки на кібербезпеку.' },
+          ],
         },
         {
           year: '2026',
@@ -139,9 +145,19 @@ export const cv = {
     },
     education: {
       title: 'Освіта',
-      school: 'Національний університет «Львівська політехніка»',
-      program: 'Кафедра «Захист інформації», кібербезпека',
-      period: 'з 2025, група КБ-203',
+      schools: [
+        {
+          name: 'Національний університет «Львівська політехніка»',
+          program: 'Кафедра «Захист інформації», кібербезпека',
+          period: 'з 2025, група КБ-203',
+        },
+        {
+          name: 'Молодіжний навчальний центр імені св. Івана Боско',
+          program: 'Дипломний проєкт: NextVibe',
+          period: '2023-2025, Львів',
+          link: 'https://mnzbosco.org.ua/',
+        },
+      ],
       langTitle: 'Мови',
       languages: [
         { name: 'Українська', level: 'рідна' },
@@ -150,7 +166,7 @@ export const cv = {
     },
     footer: {
       title: 'Напишіть мені',
-      text: 'Найшвидше відповідаю текстом: на пошту або в X.',
+      text: 'Найшвидше відповідаю текстом: на пошту, в X або LinkedIn.',
       project: 'NextVibe в X',
       owner: 'Данило Клепар',
       made: 'Зроблено на React і Vite для лабораторної роботи №2.',
@@ -185,7 +201,7 @@ export const cv = {
       flipBack: 'Flip the badge',
     },
     hero: {
-      lead: 'I build NextVibe, the IRL networking layer on Solana, and write all of its code myself. Started at 16.',
+      lead: 'Since 2023 I have been building NextVibe, the IRL networking layer on Solana, and I write all of its code myself.',
       text: 'At events people tap phones over NFC or BLE and get a proof that they met. Guests check in with the organizer and claim a POAP, while the organizer sees in a dashboard who met whom. I also study cybersecurity at Lviv Polytechnic.',
       traction: [
         { value: '1,100+', label: 'installs on the Solana dApp Store' },
@@ -200,9 +216,9 @@ export const cv = {
       role: 'Founder and developer',
       org: 'NextVibe',
       link: 'https://nextvibe.io',
-      period: 'since 2024, Lviv',
+      period: 'since 2023, Lviv',
       summary:
-        'A two-person team: I own all development, from the mobile app to the backend and on-chain parts, and my co-founder Marko Vendysh runs business, finance and operations. NextVibe started as my school diploma project, a social app with a custodial wallet. After our first call with Superteam Ukraine we rethought the product and focused on offline events.',
+        'A two-person team: I own all development, from the mobile app to the backend and on-chain parts, and my co-founder Marko Vendysh runs business, finance and operations. NextVibe started in 2023 as my diploma project at the St. John Bosco Youth Training Center, back then a social app with a custodial wallet. After our first call with Superteam Ukraine we rethought the product and focused on offline events.',
       howTitle: 'How it works',
       how: [
         { title: 'The organizer adds an event', text: 'Imports it from Luma and verifies it with an NV code in the description.' },
@@ -235,6 +251,8 @@ export const cv = {
           date: 'August 2026',
           org: 'Ministry of Digital Transformation of Ukraine, Binance, Lviv IT Cluster, Web3 Institute',
           text: 'NextVibe is one of 10 projects backed by the program: six months of mentorship and a $12,500 grant.',
+          link: 'https://thedigital.gov.ua/news/technologies/125-tysiach-na-ukrayinski-tekhnolohiyi-10-komand-otrymaiut-finansuvannia-na-rozvytok',
+          linkLabel: 'Winners list from the Ministry of Digital Transformation',
         },
         {
           name: 'Superteam Ukraine',
@@ -256,12 +274,15 @@ export const cv = {
       title: 'Path',
       years: [
         {
-          year: '2024',
-          items: [{ when: '', text: 'Started NextVibe as a school diploma project: a social app with a custodial wallet and AI-generated post images.' }],
+          year: '2023',
+          items: [{ when: '', text: 'Started NextVibe as my diploma project at the St. John Bosco Youth Training Center in Lviv: back then a social app with a custodial wallet and AI-generated post images.' }],
         },
         {
           year: '2025',
-          items: [{ when: 'September', text: 'Enrolled at Lviv Polytechnic to study cybersecurity.' }],
+          items: [
+            { when: '', text: 'Finished my studies at the Bosco center, where NextVibe was my diploma project.' },
+            { when: 'September', text: 'Enrolled at Lviv Polytechnic to study cybersecurity.' },
+          ],
         },
         {
           year: '2026',
@@ -288,9 +309,19 @@ export const cv = {
     },
     education: {
       title: 'Education',
-      school: 'Lviv Polytechnic National University',
-      program: 'Information Security Department, cybersecurity',
-      period: 'since 2025, group KB-203',
+      schools: [
+        {
+          name: 'Lviv Polytechnic National University',
+          program: 'Information Security Department, cybersecurity',
+          period: 'since 2025, group KB-203',
+        },
+        {
+          name: 'St. John Bosco Youth Training Center',
+          program: 'Diploma project: NextVibe',
+          period: '2023-2025, Lviv',
+          link: 'https://mnzbosco.org.ua/',
+        },
+      ],
       langTitle: 'Languages',
       languages: [
         { name: 'Ukrainian', level: 'native' },
@@ -299,7 +330,7 @@ export const cv = {
     },
     footer: {
       title: 'Write to me',
-      text: 'Text is the fastest way to reach me: email or X.',
+      text: 'Text is the fastest way to reach me: email, X or LinkedIn.',
       project: 'NextVibe on X',
       owner: 'Danylo Klepar',
       made: 'Built with React and Vite for lab work no. 2.',

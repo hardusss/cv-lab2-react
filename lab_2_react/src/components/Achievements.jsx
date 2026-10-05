@@ -11,6 +11,13 @@ function Achievements({ data }) {
             <p className="award__result">{item.result}</p>
             <p className="award__text">{item.text}</p>
             <p className="award__org">{item.org}</p>
+            {item.link && (
+              <p className="award__link">
+                <a href={item.link} target="_blank" rel="noreferrer">
+                  {item.linkLabel}
+                </a>
+              </p>
+            )}
           </article>
         ))}
       </div>

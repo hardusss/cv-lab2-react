@@ -125,8 +125,8 @@
 }
 
 .contacts--hero {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
   gap: 1rem 2.25rem;
   margin-top: 2rem;
   padding-top: 1.5rem;
@@ -336,6 +336,11 @@
   color: var(--muted);
 }
 
+.award__link {
+  margin-top: 0.6rem;
+  font-size: 0.9375rem;
+}
+
 .awards__note {
   margin-top: 1.5rem;
   color: var(--ink-soft);
@@ -448,6 +453,15 @@
   font-size: var(--step-1);
 }
 
+.school + .school {
+  margin-top: 1.75rem;
+}
+
+.school__name a {
+  color: inherit;
+  text-decoration-color: var(--violet);
+}
+
 .school p {
   margin-top: 0.35rem;
 }
@@ -552,6 +566,10 @@
 
   .hero__intro {
     padding-top: 0.5rem;
+  }
+
+  .contacts--hero {
+    grid-template-columns: repeat(2, minmax(0, max-content));
   }
 
   .section {

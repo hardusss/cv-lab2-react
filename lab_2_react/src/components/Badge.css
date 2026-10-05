@@ -288,4 +288,28 @@
     width: min(100%, 19.5rem);
     --strap: 4.5rem;
   }
+
+  /* На вузькому бейджі стискаємо зворотний бік, щоб усі контакти вмістилися */
+  .badge__back {
+    padding-bottom: 1.1rem;
+  }
+
+  .badge__back-title {
+    margin-top: 0.4rem;
+    font-size: 1.8rem;
+  }
+
+  .badge__back-text {
+    margin-top: 0.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .badge__back .contacts--badge {
+    gap: 0.3rem;
+    margin-top: 0.9rem;
+  }
+
+  .badge__back .contacts--badge li {
+    padding-bottom: 0.3rem;
+  }
 }
