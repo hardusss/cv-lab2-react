@@ -1,0 +1,133 @@
+/* Fixel від MacPaw (Київ), ліцензія SIL OFL 1.1, див. assets/fonts/OFL.txt */
+@font-face {
+  font-family: 'Fixel Display';
+  src: url('./assets/fonts/FixelDisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fixel Display';
+  src: url('./assets/fonts/FixelDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fixel Display';
+  src: url('./assets/fonts/FixelDisplay-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fixel Text';
+  src: url('./assets/fonts/FixelText-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fixel Text';
+  src: url('./assets/fonts/FixelText-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fixel Text';
+  src: url('./assets/fonts/FixelText-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  /* Кольори: папір бейджа, чорнило і фіолетовий ремінець */
+  --paper: #eceaf2;
+  --card: #ffffff;
+  --ink: #1b1530;
+  --ink-soft: #48405e;
+  --muted: #686180;
+  --line: #cec8dc;
+  --violet: #5b32f0;
+  --violet-deep: #4421d6;
+  --violet-pale: #e4ddff;
+
+  --font-display: 'Fixel Display', 'Helvetica Neue', Arial, sans-serif;
+  --font-text: 'Fixel Text', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Типографічна шкала (крок приблизно 1.25) */
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.3125rem;
+  --step-2: 1.625rem;
+  --step-3: clamp(1.75rem, 1.2rem + 1.8vw, 2.5rem);
+
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --max: 72rem;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  margin: 0;
+}
+
+p,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+}
+
+a {
+  color: var(--violet-deep);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

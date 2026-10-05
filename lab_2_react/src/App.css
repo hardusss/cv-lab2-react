@@ -1,0 +1,578 @@
+.page {
+  --content: 66rem;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+/* ---------- Верхня панель: її нижня лінія слугує "рейкою" для ремінця ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-block: 1rem;
+  padding-inline: max(var(--gutter), calc((100% - var(--content)) / 2));
+  border-bottom: 2px solid var(--ink);
+}
+
+.topbar__name {
+  font: 700 1.0625rem/1 var(--font-display);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.topbar__nav {
+  margin-left: auto;
+}
+
+.topbar__nav ul {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.topbar__nav a {
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.topbar__nav a:hover {
+  color: var(--violet-deep);
+  text-decoration: underline;
+}
+
+.lang-switch {
+  display: inline-flex;
+  padding: 0.2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--muted);
+  font: 600 0.8125rem/1 var(--font-text);
+  cursor: pointer;
+}
+
+.lang-switch span {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.lang-switch .is-active {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* ---------- Перший екран ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(18rem, 22rem) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5.5rem);
+  align-items: start;
+  width: min(calc(100% - 2 * var(--gutter)), var(--content));
+  margin-inline: auto;
+  padding-bottom: clamp(3.5rem, 8vw, 6rem);
+}
+
+.hero__intro {
+  max-width: 38rem;
+  padding-top: clamp(3rem, 9vw, 9.5rem);
+}
+
+.hero__lead {
+  font: 700 var(--step-3) / 1.12 var(--font-display);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.hero__text {
+  margin-top: 1.5rem;
+  font-size: 1.1875rem;
+  color: var(--ink-soft);
+}
+
+.hero__traction {
+  margin-top: 1.25rem;
+  color: var(--ink-soft);
+}
+
+.hero__traction strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15em;
+  color: var(--ink);
+}
+
+/* ---------- Контакти (три варіанти одного компонента) ---------- */
+.contacts {
+  padding: 0;
+  list-style: none;
+}
+
+.contacts li {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts__label {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.contacts a {
+  font-weight: 500;
+}
+
+.contacts--hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.25rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.contacts--badge {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+}
+
+.contacts--badge li {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.contacts--badge .contacts__label {
+  color: #a79ec6;
+}
+
+.contacts--badge a {
+  color: #fff;
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.contacts--footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  margin-top: 2.25rem;
+}
+
+.contacts--footer .contacts__label {
+  color: #a79ec6;
+}
+
+.contacts--footer a {
+  color: #fff;
+}
+
+/* ---------- Розділи ---------- */
+.section {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: 1.5rem 4rem;
+  width: min(calc(100% - 2 * var(--gutter)), var(--content));
+  margin-inline: auto;
+  padding-block: clamp(2.75rem, 6vw, 4.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.section__title {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  font-weight: 700;
+  font-size: var(--step-2);
+  letter-spacing: -0.01em;
+}
+
+.section__body {
+  max-width: 44rem;
+}
+
+.subhead {
+  margin: 2.5rem 0 1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+/* Досвід */
+.job__role {
+  font-weight: 700;
+  font-size: var(--step-1);
+}
+
+.job__period {
+  margin-top: 0.3rem;
+  color: var(--muted);
+}
+
+.job__summary {
+  margin-top: 1rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-top: 0.85rem;
+  border-top: 2px solid var(--violet);
+  counter-increment: step;
+}
+
+.steps__item::before {
+  content: counter(step);
+  font: 900 1.75rem/1 var(--font-display);
+  color: var(--violet);
+}
+
+.steps__item strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.steps__item span {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.done {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+
+.done li {
+  position: relative;
+  padding-left: 1.35rem;
+}
+
+.done li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--violet);
+}
+
+.side {
+  margin-top: 1rem;
+}
+
+.side__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 0.4rem;
+  font: 700 1.25rem/1.3 var(--font-display);
+}
+
+.side__period {
+  font: 400 0.9375rem/1 var(--font-text);
+  color: var(--muted);
+}
+
+/* Перемоги та гранти */
+.awards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.award {
+  padding-top: 1rem;
+  border-top: 2px solid var(--ink);
+}
+
+.award__date {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.award__name {
+  margin-top: 0.4rem;
+  font-weight: 900;
+  font-size: 1.75rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.award__result {
+  margin-top: 0.45rem;
+  font-weight: 600;
+  color: var(--violet-deep);
+}
+
+.award__text {
+  margin-top: 0.6rem;
+}
+
+.award__org {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.awards__note {
+  margin-top: 1.5rem;
+  color: var(--ink-soft);
+}
+
+.hacks {
+  padding: 0;
+  list-style: none;
+}
+
+.hacks li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.hacks li:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.hacks strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.hacks span {
+  color: var(--muted);
+}
+
+/* Шлях */
+.timeline {
+  padding: 0;
+  list-style: none;
+}
+
+.timeline__year {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.timeline__label {
+  font: 900 1.5rem/1.2 var(--font-display);
+  color: var(--violet);
+}
+
+.timeline__items {
+  padding: 0 0 2rem 1.5rem;
+  border-left: 2px solid var(--line);
+  list-style: none;
+}
+
+.timeline__year:last-child .timeline__items {
+  padding-bottom: 0;
+}
+
+.timeline__items li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.2rem;
+  padding-bottom: 0.9rem;
+}
+
+.timeline__items li::before {
+  content: '';
+  position: absolute;
+  left: calc(-1.5rem - 7px);
+  top: 0.65rem;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--violet);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.timeline__when {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* Стек */
+.stack__row {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: 0.25rem 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.stack__row:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.stack dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.stack dd {
+  color: var(--ink-soft);
+}
+
+/* Освіта */
+.school__name {
+  font-weight: 700;
+  font-size: var(--step-1);
+}
+
+.school p {
+  margin-top: 0.35rem;
+}
+
+.school__period {
+  color: var(--muted);
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 3rem;
+}
+
+.languages dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.languages dd {
+  color: var(--muted);
+}
+
+/* ---------- Підвал ---------- */
+.footer {
+  margin-top: clamp(2rem, 6vw, 4rem);
+  padding-block: clamp(3rem, 8vw, 5.5rem);
+  background: var(--ink);
+  color: #fff;
+}
+
+.footer__inner {
+  width: min(calc(100% - 2 * var(--gutter)), var(--content));
+  margin-inline: auto;
+}
+
+.footer__title {
+  font-weight: 500;
+  font-size: var(--step-1);
+  color: #b9b0d6;
+}
+
+.footer__email {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font: 700 clamp(1.5rem, 1rem + 2.2vw, 2.5rem) / 1.1 var(--font-display);
+  letter-spacing: -0.015em;
+  color: #fff;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.footer__email:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.footer__email:focus-visible {
+  outline-color: var(--violet-pale);
+}
+
+.footer__text {
+  margin-top: 1rem;
+  color: #b9b0d6;
+}
+
+.footer__meta {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: #a79ec6;
+}
+
+.footer__meta:first-of-type {
+  margin-top: 2.5rem;
+}
+
+.footer__meta a {
+  color: #fff;
+}
+
+.footer a:focus-visible {
+  outline-color: var(--violet-pale);
+}
+
+/* ---------- Мобільні екрани ---------- */
+@media (max-width: 760px) {
+  .topbar {
+    gap: 1rem;
+  }
+
+  .topbar__nav {
+    display: none;
+  }
+
+  .lang-switch {
+    margin-left: auto;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero__intro {
+    padding-top: 0.5rem;
+  }
+
+  .section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .section__title {
+    position: static;
+  }
+
+  .steps,
+  .awards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .stack__row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .timeline__year {
+    grid-template-columns: 3.75rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+}

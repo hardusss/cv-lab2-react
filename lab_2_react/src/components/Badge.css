@@ -1,0 +1,291 @@
+/* Бейдж учасника, що висить на ремінці від лінії верхньої панелі */
+
+.badge-holder {
+  --badge-radius: 1.1rem;
+  --strap: 6.25rem;
+  position: relative;
+  width: min(100%, 21.5rem);
+  margin-inline: auto;
+  padding-top: var(--strap);
+  perspective: 1600px;
+  transform-origin: 50% 0;
+  animation: badge-hang 1.5s cubic-bezier(0.25, 0.8, 0.3, 1) both;
+}
+
+.lanyard {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2.4rem;
+  height: calc(var(--strap) - 0.4rem);
+  transform: translateX(-50%);
+  background: var(--violet);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.12), inset -2px 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.lanyard span {
+  writing-mode: vertical-rl;
+  font: 700 0.6875rem/1 var(--font-display);
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.78);
+  white-space: nowrap;
+  padding-top: 0.5rem;
+}
+
+.lanyard-clip {
+  position: absolute;
+  top: calc(var(--strap) - 1.25rem);
+  left: 50%;
+  width: 1.9rem;
+  height: 2rem;
+  transform: translateX(-50%);
+  border-radius: 0.45rem 0.45rem 0.6rem 0.6rem;
+  background: linear-gradient(180deg, #d8d4e4 0%, #a29cb8 100%);
+  box-shadow: inset 0 -2px 0 rgba(27, 21, 48, 0.18), 0 2px 4px rgba(27, 21, 48, 0.2);
+  z-index: 3;
+}
+
+.lanyard-clip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0.45rem;
+  width: 0.7rem;
+  height: 0.5rem;
+  transform: translateX(-50%);
+  border-radius: 0.2rem;
+  background: #7d7795;
+}
+
+/* Сам бейдж: дві сторони, які обертаються навколо вертикальної осі */
+.badge {
+  position: relative;
+  aspect-ratio: 34 / 46;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+.badge.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Легкий поворот при наведенні підказує, що в бейджа є зворотний бік */
+.badge:not(.is-flipped):has(.badge__tap:hover) {
+  transform: rotateY(-9deg);
+}
+
+.badge__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem 0;
+  border-radius: var(--badge-radius);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 1px 0 rgba(27, 21, 48, 0.05), 0 28px 50px -26px rgba(27, 21, 48, 0.45);
+}
+
+.badge__slot {
+  align-self: center;
+  width: 3.4rem;
+  height: 0.55rem;
+  margin: -0.4rem 0 1.25rem;
+  border-radius: 1rem;
+  background: var(--paper);
+  box-shadow: inset 0 1px 2px rgba(27, 21, 48, 0.25);
+}
+
+/* Лицьовий бік */
+.badge__front {
+  background: var(--card);
+  color: var(--ink);
+}
+
+.badge__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.badge .qr {
+  width: 5.25rem;
+  height: 5.25rem;
+  flex: none;
+  margin: -0.35rem -0.35rem 0 0;
+  color: var(--ink);
+}
+
+.badge__event {
+  font: 700 1.0625rem/1 var(--font-display);
+  color: var(--violet);
+}
+
+.badge__year {
+  margin-top: 0.4rem;
+  font: 500 0.875rem/1 var(--font-display);
+  color: var(--muted);
+}
+
+.badge__name {
+  margin-top: auto;
+  font-weight: 900;
+  font-size: clamp(2.7rem, 2rem + 2.4vw, 3.7rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+
+.badge__name span {
+  display: block;
+}
+
+.badge__role {
+  margin-top: 0.9rem;
+  font-weight: 500;
+  font-size: 1.0625rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+.badge__city {
+  margin-top: 0.2rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* Кольорова смуга внизу, як на бейджах подій: колір позначає роль */
+.badge__band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem -1.5rem 0;
+  padding: 1rem 1.5rem 1.1rem;
+  border-radius: 0 0 var(--badge-radius) var(--badge-radius);
+  background: var(--violet);
+  color: #fff;
+}
+
+.badge__band-label {
+  font: 900 1.75rem/1 var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.badge__tap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  max-width: 9.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: 500 0.8125rem/1.25 var(--font-text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.badge__tap .nfc-icon {
+  flex: none;
+}
+
+/* Розтягуємо кнопку на весь бейдж: натиснути можна будь-де */
+.badge__tap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--badge-radius);
+}
+
+.badge__tap:focus-visible {
+  outline: none;
+}
+
+.badge__tap:focus-visible::after {
+  outline: 3px solid var(--violet);
+  outline-offset: 4px;
+}
+
+/* Зворотний бік: Proof of Meet */
+.badge__back {
+  transform: rotateY(180deg);
+  padding-bottom: 1.4rem;
+  color: #fff;
+  background:
+    repeating-radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 1.4rem),
+    var(--ink);
+}
+
+.badge__back .badge__slot {
+  background: var(--paper);
+}
+
+.badge__back-title {
+  margin-top: 0.75rem;
+  font: 900 2.1rem/1 var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.badge__back-text {
+  margin-top: 0.75rem;
+  color: #b9b0d6;
+  line-height: 1.4;
+}
+
+.badge__date {
+  display: block;
+  margin-top: 0.35rem;
+  font: 700 1.25rem/1.2 var(--font-display);
+  color: var(--violet-pale);
+}
+
+.badge__flip-back {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: none;
+  color: #fff;
+  font: 500 0.875rem/1 var(--font-text);
+  cursor: pointer;
+}
+
+.badge__flip-back:hover {
+  border-color: #fff;
+}
+
+.badge__flip-back:focus-visible {
+  outline-color: var(--violet-pale);
+}
+
+@keyframes badge-hang {
+  0% {
+    opacity: 0;
+    transform: translateY(-2.5rem) rotate(-5deg);
+  }
+  35% {
+    opacity: 1;
+    transform: translateY(0) rotate(3.2deg);
+  }
+  60% {
+    transform: rotate(-1.6deg);
+  }
+  80% {
+    transform: rotate(0.7deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .badge-holder {
+    width: min(100%, 19.5rem);
+    --strap: 4.5rem;
+  }
+}
